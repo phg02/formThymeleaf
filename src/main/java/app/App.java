@@ -53,7 +53,14 @@ public class App {
         // Add / uncomment POST commands for any pages that need web form POSTS
         // app.post(PageIndex.URL, new PageIndex());
         // app.post(PageMission.URL, new PageMission());
-        app.post(PageST2A.URL, new PageST2A());
+        app.post("startYear", ctx -> {
+            ctx.sessionAttribute("startyear", ctx.formParam("startyear"));
+            ctx.redirect("/world.html");
+        });
+        app.post("endYear", ctx -> {
+            ctx.sessionAttribute("endyear", ctx.formParam("endyear"));
+            ctx.redirect("/world.html");
+        });
         app.post(PageST2B.URL, new PageST2B());
         app.post(statecity.URL, new statecity());
         // app.post(PageST3A.URL, new PageST3A());

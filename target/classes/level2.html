@@ -43,23 +43,29 @@
                     <h1 th:text="${title}"></h1>
                     <br>
                 </div>
-                <form class="custommenu" action="/world.html" method="post">
+                <div class="custommenu">
+              
                     <div class="startyear">
-                        <select class="clect" id="startyear" name="startyear" required>
-                            <option disabled selected>Start year</option> 
-                            <option th:each="year:${yearselection}" th:text="${year}"></option>
-                        </select>
+                        <form action="/startYear" method="post" onchange="this.form.submit()">
+                            <select class="clect" id="startyear" name="startyear" required>
+                                <option disabled selected>Start year</option> 
+                                <option th:each="year:${yearselection}" th:text="${year}"></option>
+                            </select>
+                        </form>
                     </div>
                     <div class="endyear">
-                        <select class="clect" id="endyear" name="endyear" required>
-                            <option disabled selected>End year</option>
-                            <option th:each="year:${yearselection}" th:text="${year}"></option>
-                        </select>
+                        <form action="/endYear" method="post" onchange="this.form.submit()">
+                            <select class="clect" id="endyear" name="endyear" required>
+                                <option disabled selected>End year</option>
+                                <option th:each="year:${yearselection}" th:text="${year}"></option>
+                            </select>
+                        </form>
                     </div>
                     <div class="thesub">
                         <button type="submit" class="subform"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div> 
                 </form>
+                </div>
                 <br>
                 <div class="squidborder">
                     <table>

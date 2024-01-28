@@ -49,8 +49,8 @@ public class PageST2A implements Handler {
         model.put("yearselection", yearselection);
 
         // get year from form
-        String startYear = context.formParam("startyear");
-        String endYear = context.formParam("endyear");
+        String startYear = context.sessionAttribute("startyear");
+        String endYear = context.sessionAttribute("endyear");
 
         if (startYear == null || endYear == null || startYear.isEmpty() || endYear.isEmpty()) {
             model.put("title", new String("World View"));
