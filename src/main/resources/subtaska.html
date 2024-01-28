@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KewtSquid</title>
+    <link rel="stylesheet" href="newstyle.css">
+    <script src="https://kit.fontawesome.com/d535fdea96.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="thehead">
+        <div class="thehead-wrap">
+        <div class="logo">
+            <a href="homepage.html"><i class="fa-solid fa-earth-americas"></i></a>
+        </div>
+        <div class="navbar">
+            <ul class="listofbutton">
+                <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li id="tool"></i><a href=""><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="page3A.html">Compare region</a></li>
+                            <li><a href="page3B.html">Find similar region</a></li>
+                            <li><a href="p.html">Region match data</a></li>
+                        </div>
+                
+                </li>
+                
+                <li><a href="world.html">World View</a></li>
+                <li><a href="country.html">Country View</a></li>
+                <li><a href="mission.html">About us</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="pagetitle">
+                <p class="title">Find country with average temp and population</p>
+                <p class="subtitle">Enter population or temperature to find countries</p>
+            </div>
+        <div class="squid filter">
+            <div class="wrap2">
+                <div class="squidhead">Filter:</div>
+                <input
+                type="text"
+                id="country-input"
+                class="input-box"
+                placeholder="Min population">
+                </input>
+                <div>to</div>
+                <input
+                type="text"
+                id="country-input"
+                class="input-box"
+                placeholder="Max population">
+                </input>
+                <div>or</div>
+                <input
+                type="text"
+                id="country-input"
+                class="input-box"
+                placeholder="Min avg.temp">
+                </input>
+                <div>to</div>
+                <input
+                type="text"
+                id="country-input"
+                class="input-box"
+                placeholder="Max avg.temp">
+                </input>
+            </div>
+            <button type="submit" class="button">Search</button>
+        </div>
+        <div class="squid result">
+            <div class="wrap">
+                <div class="squidlabel">Country with a selected range of data</div>
+                <div class="squidborder">
+                    <table>
+                        <tr>
+                            <td>Country</td>
+                            <td>Population</td>
+                            <td>Average temperature</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                        <tr>
+                            <td>VietNam</td>
+                            <td>80 000 000</td>
+                            <td>8.777</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <hr>
+    <footer>
+        <div class="gbdb">
+            <h3>Global Database</h3>
+            <ul>
+                <li><a href="world.html">Find world data</a></li>
+                <li><a href="country.html">Find country data</a></li>
+                <li><a href="citystate.html">Find state/city data</a></li>
+            </ul>
+        </div>
+        <div class="at">
+            <h3>Analytic tools</h3>
+            <ul>
+                <li><a href="">Compare region</a></li>
+                <li><a href="">Find countries with similar data</a></li>
+                <li><a href="">Find countries with selected data</a></li>
+            </ul>
+        </div>
+        <div class="ab">
+            <a href="mission.html"><h3>About us</h3></a>
+        </div>
+        <div class="at">
+            <h3>Contact us</h3>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href=""><i class="fa-brands fa-instagram"></i></a> <a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li>+84 123 456 77</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
+
+    <script>
+    const lenis = new Lenis();
+    
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    </script>
+
+</body>
+</html>

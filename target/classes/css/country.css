@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Neue-Montreal-Reg', 'sans-serif';
+}
+
+@font-face {
+    font-family: Neue-Montreal-Reg;
+    src: url(NeueMontreal-Regular.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Med;
+    src: url(NeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Bold;
+    src: url(NeueMontreal-Bold.otf);
+}
+*::-webkit-scrollbar-track {
+    background-color: #d9d9d920;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: #d9d9d920;
+    border-radius: 30px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ffffffaf;
+    border-radius: 20px;
+}
+
+body {
+    background-color: #000000;
+}
+
+section {
+    min-height: 100vh;
+}
+
+
+.header {
+    width: 100vw;
+    height: auto;
+}
+
+.thehead {
+    position: absolute;
+    width: 100%;
+}
+
+.thehead-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+
+.thehead .logo {
+    font-size: 3rem;
+    margin: 1rem 2rem
+}
+
+.thehead .logo a {
+    color: #9A9A9A;
+}
+
+.thehead .navbar {
+    margin: 0 2rem;
+}
+
+.thehead .navbar .listofbutton {
+    list-style: none;
+}
+
+.thehead .navbar .listofbutton li {
+    display: inline-block;
+    width: max-content;
+    padding: 20px;
+    position: relative;
+}
+
+.thehead .navbar .listofbutton a {
+    text-decoration: none;
+    color: #9A9A9A;
+    font-size: 1.2rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+
+.thehead .navbar .listofbutton a:hover {
+    color: white;
+    border-bottom: 3px solid white;
+    transition: ease-in-out 0.2s;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 999;
+
+}
+
+.submenu ul li {
+    list-style: none;
+    display: block;
+    height: 15px;
+}
+
+#tool:hover .submenu {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 200px;
+    transition: ease-in 0.8s;
+}
+
+.option {
+    width: 120px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.option:hover {
+    background-color: white;
+    color: black;
+    transition: ease-in 0.1s;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 80%;
+    height: 90%;
+    align-content: center;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 10px;
+    background: rgb(130, 130, 130);
+    background: linear-gradient(140deg, rgba(130, 130, 130, 0.364670868347339) 0%, rgba(0, 0, 0, 0.4823179271708683) 29%, rgba(0, 0, 0, 0.46271008403361347) 56%, rgba(9, 121, 99, 0.4375) 100%);
+    color: white;
+    border: 2px solid rgb(1, 76, 1);
+}
+
+.box__1 {
+    grid-column: 1/3;
+    grid-row: 1/4;
+}
+
+select {
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+
+.custommenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 20px;
+}
+
+.subform {
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    color: white;
+}
+.squidborder{
+    border: 2px solid aliceblue;
+    background: none;
+    border-radius: 18px;
+    height: 400px;
+    width: 97%; 
+    font-size: 1.4rem;
+    overflow: auto;
+}
+tr:nth-child(even) {
+    background-color: #d9d9d920;
+}
+table{
+    border-collapse: collapse;
+}
+.squidborder tr td{
+    width: 330px;
+    text-align: center;
+}
+th,
+td {
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 435;
+}
+.infoforyear{
+    font-size: 2rem;
+    width: 40%;
+
+}
+.infosforyear tr th{
+    width: 300px;
+    font-size: 1.2rem;
+    font-family:Neue-Montreal-Bold;
+}
+.infosforyear tr td{
+    width: 350px;
+    
+    text-align: center;
+}
+
+.box__2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.box__3 h1 {
+    padding-bottom: 10px;
+}
+.selectContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px
+}
+
+.box__3 {
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+.sortbutt{
+    font-size: 1.4rem;
+    color: white;
+    border: 2px solid white;
+    width: 30px;
+    border-radius: 40%;
+    background: none;
+    margin-left: 10px;
+}
+
+.ranking {
+    font-size: 1.4rem;
+    display: block;
+    border: 2px solid white;
+    height: 70%;
+    border-radius: 5%;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+
+.ranking ol {
+    list-style-position: inside;
+    margin: 5px;
+}
+
+.box__4 {}
+
+.box__5 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+.population{
+    justify-self: end;
+}
+
+.year {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.tempunit {
+    justify-self: end;
+}
+
+.box__6 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    padding-bottom: 40px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #101010;
+}
+
+footer li {
+    list-style: none;
+    padding: 2px;
+    line-height: 1.4;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer i {
+    font-size: 2rem;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}

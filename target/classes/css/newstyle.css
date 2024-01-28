@@ -1,0 +1,305 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root{
+    --squid: #0e0e0e;
+    --greysquid: #9A9A9A;
+}
+@font-face {
+    font-family: Neue-Montreal-Reg;
+    src: url(NeueMontreal-Regular.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Med;
+    src: url(NeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Bold;
+    src: url(NeueMontreal-Bold.otf);
+}
+body{
+    font-family: Neue-Montreal-Med;
+    background-color: var(--squid);
+}
+.header {
+    width: 100vw;
+    height: auto;
+}
+
+.thehead {
+    position: absolute;
+    width: 100%;
+}
+
+.thehead-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+
+.thehead .logo {
+    font-size: 3rem;
+    margin: 1rem 2rem
+}
+
+.thehead .logo a {
+    color: #9A9A9A;
+}
+
+.thehead .navbar {
+    margin: 0 2rem;
+}
+
+.thehead .navbar .listofbutton {
+    list-style: none;
+}
+
+.thehead .navbar .listofbutton li {
+    display: inline-block;
+    width: max-content;
+    padding: 20px;
+    position: relative;
+}
+
+.thehead .navbar .listofbutton a {
+    text-decoration: none;
+    color: #9A9A9A;
+    font-size: 1.2rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+
+.thehead .navbar .listofbutton a:hover {
+    color: white;
+    border-bottom: 3px solid white;
+    transition: ease-in-out 0.2s;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 999;
+
+}
+
+.submenu ul li {
+    list-style: none;
+    display: block;
+    height: 15px;
+}
+
+#tool:hover .submenu {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 200px;
+    transition: ease-in 0.8s;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+main .content {
+    color: white;
+    font-size: 2rem;
+    top: 50%;
+    text-align: center;
+
+}
+
+main .content h1 {
+    font-family: 'Neue-Montreal-Bold', 'sans-serif';
+    font-size: 3.5rem;
+}
+
+main .content p {
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+    color: #9A9A9A;
+}
+.title{
+    color: white;
+    text-align: center;
+    text-shadow: 0px 0px 80px #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+.subtitle{
+    color: #9D9D9D;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 70px 150px 0px 150px;
+    gap: 60px;
+}
+.filter{
+    display: flex;
+    color: white;
+    font-size: 1.5rem;
+    border: 1px solid aliceblue; 
+    background: none; 
+    border-radius: 18px;
+    padding: 45px 0px 45px 0px;
+    gap: 70px;
+}
+.filter:hover{
+    box-shadow: 0px 0px 20px #ffffff3f;
+    background: rgba(255, 255, 255, 0);
+    outline: none;
+}
+.wrap2 {
+    display: flex;
+    gap: 20px;
+}
+.squidhead{
+    padding-left: 100px;
+    background: none;
+    font-weight: medium;
+    font-size: 1.6rem;
+    color: white;
+}
+.input-box{
+    background-color: var(--squid);
+    border: 2px solid aliceblue; 
+    border-radius: 30px;
+    padding-left: 10px;
+    outline: none;
+    width: 130px;
+    height: 40px;
+    color: white;
+}
+.input-box:focus{
+    color: white;
+}
+button{
+    border-radius: 55px;
+    border: 2px solid aliceblue; 
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 35px 10px 35px;
+}
+button:active{
+    border: 2px solid rgb(114, 255, 199);
+    color: rgb(115, 255, 206);
+}
+.result{
+    border: 1px solid rgba(41, 213, 210, 0.427);
+    background: rgb(44,107,136);
+    background: linear-gradient(110deg, rgba(44,107,136,0.499124649859944) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(31,117,54,0.3478641456582633) 100%);
+    border-radius: 18px;
+    padding: 45px 0px 110px 20px;
+    margin-bottom: 100px;
+}
+.result:hover{
+    border: 1px solid rgba(81, 255, 252, 0.566);
+}
+.squidlabel{
+    background: none;
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: white;
+}
+.squidborder{
+    border: 2px solid aliceblue; 
+    background: none; 
+    border-radius: 18px;
+    height: 480px;
+    width: 95%;
+    overflow: auto;
+}
+.wrap{
+    margin: 0 auto;
+    width: 86%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    background: none;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 40px;
+}  
+th, td {
+    text-align: center;
+    padding: 8px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 435;
+    padding-bottom: 30px;
+}
+tr:nth-child(even) {
+    background-color: #d9d9d920;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    padding-bottom: 40px;
+    padding-top: 50px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #101010;
+}
+
+footer li {
+    list-style: none;
+    padding: 2px;
+    line-height: 1.4;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer i {
+    font-size: 2rem;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+*::-webkit-scrollbar-track {
+    background-color: #d9d9d920;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: #d9d9d920;
+    border-radius: 30px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ffffffaf;
+    border-radius: 20px;
+}

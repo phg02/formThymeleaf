@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Neue-Montreal-Reg', 'sans-serif';
+}
+
+@font-face {
+    font-family: Neue-Montreal-Reg;
+    src: url(NeueMontreal-Regular.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Med;
+    src: url(NeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Bold;
+    src: url(NeueMontreal-Bold.otf);
+}
+
+body {
+    background-color: #000000;
+}
+
+section {
+    min-height: 100vh;
+    color: white;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}   
+
+.header {
+    width: 100vw;
+    height: auto;
+}
+
+.thehead {
+    position: absolute;
+    width: 100%;
+}
+
+.thehead-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.thehead .logo {
+    font-size: 3rem;
+    margin: 1rem 2rem
+}
+.thehead .logo a {
+    color: #9A9A9A;
+}
+.thehead .navbar {
+    margin: 0 2rem;
+}
+.thehead .navbar .listofbutton {
+    list-style: none;
+}
+.thehead .navbar .listofbutton li {
+    display: inline-block;
+    width: max-content;
+    padding: 20px;
+    position: relative;
+}
+
+.thehead .navbar .listofbutton a {
+    text-decoration: none;
+    color: #9A9A9A;
+    font-size: 1.2rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+
+.thehead .navbar .listofbutton a:hover {
+    color: white;
+    border-bottom: 3px solid white;
+    transition: ease-in-out 0.2s;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 999;
+
+}
+
+.submenu ul li {
+    list-style: none;
+    display: block;
+    height: 15px;
+}
+
+#tool:hover .submenu {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 200px;
+    transition: ease-in 0.8s;
+}
+
+.option {
+    width: 120px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.option:hover {
+    background-color: white;
+    color: black;
+    transition: ease-in 0.1s;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 150px 98px 0px 98px;
+    gap: 40px;
+}
+.statement{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0px 20px 0px;
+    color: white;
+    font-size: 2rem;
+
+    border-radius: 15px;
+    border: 1px solid rgba(41, 213, 210, 0.563);
+    background: rgb(44,107,136);
+    background: linear-gradient(60deg, rgba(44,107,136,0.499124649859944) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(31,117,54,0.3478641456582633) 100%);
+}
+#mst, p{
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+#mst{
+    font-family: Neue-Montreal-Bold;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 50px;
+    color: white;
+
+    text-shadow: 0px 0px 145px #b3b3b3;
+}
+
+p{
+    font-family: Neue-Montreal-Reg;
+    font-style: normal;
+    font-size: 25px;
+    color: white;
+}
+
+.contributor{
+    font-family: 'Neue Montreal';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+
+    color: white;
+
+    text-shadow: 0px 0px 145px #b3b3b3;
+}
+
+.contri{
+    font-family: Neue-Montreal-Med;
+    font-style: normal;
+    font-size: 25px;
+    font-weight: 500;
+
+    color: White;
+
+    margin-bottom: 50px;
+}
+#Contributors{
+    font-family: Neue-Montreal-Bold;
+}
+.contri{
+    display:flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0px 20px 0px;
+    border-radius: 15px;
+
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border: 1px solid rgba(41, 213, 210, 0.563);
+    background: rgb(44,107,136);
+    background: linear-gradient(60deg, rgba(44,107,136,0.499124649859944) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(31,117,54,0.3478641456582633) 100%);
+
+}
+
+#sid {
+    padding-left: 50px;
+    font-family: Neue-Montreal-Med;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    padding-bottom: 40px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #101010;
+}
+
+footer li {
+    list-style: none;
+    padding: 2px;
+    line-height: 1.4;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer i {
+    font-size: 2rem;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about_us.css">
+    
+    <script src="https://kit.fontawesome.com/d535fdea96.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="thehead">
+        <div class="thehead-wrap">
+            <div class="logo">
+                <a href="/"><i class="fa-solid fa-earth-americas"></i></a>
+            </div>
+            <div class="navbar">
+                <ul class="listofbutton">
+                    <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li id="tool"></i><a href=""><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="page3A.html">Compare region</a></li>
+                                <li><a href="page3B.html">Find similar region</a></li>
+                                <li><a href="p.html">Region match data</a></li>
+                            </div>
+                    </li>
+                    <li><a href="world.html">World View</a></li>
+                    <li><a href="country.html">Country View</a></li>
+                    <li><a href="citystate.html">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="statement">
+            <div id="mst">Mission statement</div>
+                <p>	Our team website has been created to solve social challenges about climate change as well as population that helps governments, scientists, and the general public analyze patterns of change in the ocean, land temperatures, and population over 260 years.  
+                    <br><br>
+                    Our goal is to create and preserve a state-of-the-art Global Temperature and Population Database that will be an invaluable tool for comprehending, tracking, and resolving the intricate interactions between population dynamics and global temperature changes. Our dedication is based on the conviction that accurate, complete, and current facts are necessary for making well-informed decisions.  
+                    <br><br>
+                    By offering a user-friendly web-based platform, our website provides easy accessibility to data and analysis tools not only for specialists but also non-experts. The website ensures the delivery of accurate, reliable, comprehensive, and up-to-date data for people to stay informed about temperature and population patterns and fosters interdisciplinary collaboration and insights. Moreover, the website's advanced algorithms for precise calculations represent the correlation between annual global temperatures and population growth. Furthermore, the site is equipped with advanced algorithms for precise calculations representing the correlation between annual global temperatures and population growth. Additionally, the website is dedicated to promoting global collaboration by providing open access to the database to encourage a united effort in addressing shared challenges and finding innovative solutions on a global scale that contribute to a resilient and sustainable future. What is more, the database will feature robust monitoring tools and analytical capabilities, allowing users to track temporal and spatial patterns in global temperature trends and population dynamics. This functionality will empower researchers, policymakers, and stakeholders to identify correlations, anticipate changes, and formulate evidence-based strategies. 
+                    <br><br>
+                    Our website is to build an enormous database of population statistics and global temperature data by assembling information from several sources worldwide. This unified center will support interdisciplinary research, providing dependable data for analysis, forecasting, and decision-making to the public, government, and scientists. 
+                    <br><br>
+                    This database is committed to excellence, transparency, and ethical data practices, ensuring that the Global Temperature and Population Database remains a trusted and indispensable tool for the betterment of our world. 
+                </p>
+        </div>
+
+        <div class="contri">
+            <h1 id="Contributors">Contributors</h1>
+            <ul id="sid">
+                <li>Nguyen Thi Hong Hanh - S4020232</li>
+                <li>Pham Trung Nghia - S4028630</li>
+                <li>Nguyen Minh Phuong - S4063236</li>
+                <li>Bui Thai Son - S4037172</li>
+                <li>Dao Thao Phuong - S4029319</li>
+            </ul>
+        </div>
+	</section>
+    <hr>
+
+
+    <footer>
+        <div class="gbdb">
+            <h3>Global Database</h3>
+            <ul>
+                <li><a href="world.html">Find world data</a></li>
+                <li><a href="country.html">Find country data</a></li>
+                <li><a href="citystate.html">Find state/city data</a></li>
+            </ul>
+        </div>
+        <div class="at">
+            <h3>Analytic tools</h3>
+            <ul>
+                <li><a href="">Compare region</a></li>
+                <li><a href="">Find countries with similar data</a></li>
+                <li><a href="">Find countries with selected data</a></li>
+            </ul>
+        </div>
+        <div class="ab">
+            <a href=""><h3>About us</h3></a>
+        </div>
+        <div class="at">
+            <h3>Contact us</h3>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href=""><i class="fa-brands fa-instagram"></i></a> <a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li>+84 123 456 77</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
+
+    <script>
+    const lenis = new Lenis();
+    
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="country.css">
+    <script src="https://kit.fontawesome.com/d535fdea96.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="thehead">
+        <div class="thehead-wrap">
+        <div class="logo">
+            <a href="/"><i class="fa-solid fa-earth-americas"></i></a>
+        </div>
+        <div class="navbar">
+            <ul class="listofbutton">
+                <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li id="tool"></i><a href=""><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="page3A.html">Compare region</a></li>
+                            <li><a href="page3B.html">Find similar region</a></li>
+                            <li><a href="p.html">Region match data</a></li>
+                        </div>
+                
+                </li>
+                
+                <li><a href="world.html">World View</a></li>
+                <li><a href="country.html">Country View</a></li>
+                <li><a href="mission.html">About us</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+    <main>
+
+    <section id="first">
+    <div class="wrapper">
+        <div class="container">
+            <div class="box box__1">
+                <div class="boxinfo">
+                    <h1><span th:text="${country}"></span></h1>
+                    <br>
+                </div>
+                <form class="custommenu" action='/country.html' method='post'>
+                    <div class="country">
+                        <select id="country" name="country">
+                            <option disabled selected>Country</option> 
+                            <option th:each="country : ${countryselection}" th:text="${country}"></option>
+                        </select>
+                    </div>
+                    <div class="startYear">
+                        <select id="startYear" name="startYear">
+                            <option disabled selected>Start year</option> 
+                            <option th:each="year:${yearselection}" th:text="${year}"></option>
+                        </select>
+                    </div>
+                    <div class="endyear">
+                        <select  id="endYear" name="endYear">
+                            <option disabled selected>End year</option>
+                            <option th:each="year:${yearselection}" th:text="${year}"></option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="thesub">
+                        <button type="submit" class="subform"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div> 
+                </form>
+                <br>
+                <div class="squidborder">
+                    <table>
+                        <tr>
+                            <th>Year</th>
+                            <th>Population</th>
+                            <th>Average temperature</th>
+                            <th>Minimum temperature</th>
+                            <th>Maximum temperature</th>
+                        </tr>
+                        <tr th:each="hehe : ${answer}">
+                            <td th:text="${hehe.year}"></td>
+                            <td th:text="${hehe.population}"></td>
+                            <td><span th:text="${hehe.AVGtemp}"></span>&#176;C</td>
+                            <td><span th:text="${hehe.Mintemp}"></span>&#176;C</td>
+                            <td><span th:text="${hehe.Maxtemp}"></span>&#176;C</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="box box__2">
+                <h1>Other options</h1>
+                <br>
+                <a href="world.html"><button class="option">World View</button></a>
+                <a href="citystate.html"><button class="option">State/City View</button></a>
+            </div>
+            <div class="box box__3">
+                <h1>Ranking</h1>
+                <form action="/country.html" method="post">
+                <div class="selectContainer">
+                    <select class="sortby">
+                        <option value="">Ascending</option>
+                        <option value="">Descending</option>
+                    </select>
+                    <select class="TypeMeasure">
+                        <option value="">Average</option>
+                        <option value="">Min</option>
+                        <option value="">Min</option>
+                    </select>
+                    <select class="TypeClass">
+                        <option value="">City</option>
+                        <option value="">State</option>
+                    </select>
+                    <button type="submit" class="sortbutt"><i class="fa-solid fa-arrow-right"></i></i></button>
+                </div>
+                <form>
+                <div class="ranking">
+                    <ol>
+                        <li>Country 1</li>
+                        <li>Country 2</li>
+                        <li>Country 3</li>
+                        <li>Country 4</li>
+                        <li>Country 5</li>
+                        <li>Country 6</li>
+                        <li>Country 7</li>
+                        <li>Country 8</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="box box__5">
+                <div class="year">
+                    <h1>Start year: <span th:each="huhu :${answer1}" th:text="${huhu.year}"></span></h1>
+                </div>
+                <div class="population">
+                    <h1 th:each="huhu :${answer1}" th:text="${huhu.population}"></h1>
+                </div>
+                <div class="popunit">
+                    <h5>people</h5>
+                </div>
+                <div class="tempunit">
+                    <h5>Average temperature</h5>
+                </div>
+                <div class="temp">
+                    <h1><span th:each="huhu :${answer1}" th:text="${huhu.AVGtemp}"></span>&#176;C</h1>   
+                </div>
+                <div class="tempunit">
+                    <h5>Minimum temperature</h5>
+                </div>
+                <div class="temp">
+                    <h1><span th:each="huhu :${answer1}" th:text="${huhu.Mintemp}"></span>&#176;C</h1>   
+                </div>
+                <div class="tempunit">
+                    <h5>Maximum temperature</h5>
+                </div>
+                <div class="temp">
+                    <h1><span th:each="huhu :${answer1}" th:text="${huhu.Maxtemp}"></span>&#176;C</h1>   
+                </div>
+            </div>
+            <div class="box box__6">
+                <div class="year">
+                    <h1>End year: <span th:each="hoho :${answer2}" th:text="${hoho.year}"></span></h1>
+                </div>
+                <div class="population">
+                    <h1 th:each="hoho :${answer2}" th:text="${hoho.population}"></h1>
+                </div>
+                <div class="popunit">
+                    <h5>people</h5>
+                </div>
+                <div class="tempunit">
+                    <h5>Average temperature</h5>
+                </div>
+                <div class="temp">
+                    <h1><span th:each="hoho :${answer2}" th:text="${hoho.AVGtemp}"></span>&#176;C</h1>   
+                </div>
+                <div class="tempunit">
+                    <h5>Minimum temperature</h5>
+                </div>
+                <div class="temp">
+                    <h1><span th:each="hoho :${answer2}" th:text="${hoho.Mintemp}"></span>&#176;C</h1>   
+                </div>
+                <div class="tempunit">
+                    <h5>Maximum temperature</h5>
+                </div>
+                <div class="temp">
+                    <h1><span th:each="hoho :${answer2}" th:text="${hoho.Maxtemp}"></span>&#176;C</h1>
+                </div>
+            </div>
+            <div class="box box__7">
+                <h3>Population change:</h3>
+                <h1><span th:text="${percentPop}"></span>%</h1>
+                <br>
+                <h3>Temperature change:</h3>
+                <h1><span th:text="${percentTemp}"></span>%</h1>
+                <br>
+                <h3>Min temperature change:</h3>
+                <h1><span th:text="${percentMinTemp}"></span>%</h1>
+                <br>
+                <h3>Max temperature change:</h3>
+                <h1><span th:text="${percentMaxTemp}"></span>%</h1>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    </main>
+    <hr>
+    <footer>
+        <div class="gbdb">
+            <h3>Global Database</h3>
+            <ul>
+                <li><a href="world.html">Find world data</a></li>
+                <li><a href="country.html">Find country data</a></li>
+                <li><a href="citystate.html">Find state/city data</a></li>
+            </ul>
+        </div>
+        <div class="at">
+            <h3>Analytic tools</h3>
+            <ul>
+                <li><a href="">Compare region</a></li>
+                <li><a href="">Find countries with similar data</a></li>
+                <li><a href="">Find countries with selected data</a></li>
+            </ul>
+        </div>
+        <div class="ab">
+            <a href="mission.html"><h3>About us</h3></a>
+        </div>
+        <div class="at">
+            <h3>Contact us</h3>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href=""><i class="fa-brands fa-instagram"></i></a> <a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li>+84 123 456 77</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
+
+    <script>
+    const lenis = new Lenis();
+    
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    </script>
+</body>
+</html>
