@@ -123,6 +123,35 @@ public class PageST2B implements Handler {
         ArrayList<info> infos10 = jbdc10.lvl2AVGTempRankingASC(startYear, endYear, country);
         model.put("answer3", infos10);
 
+        String sort = context.sessionAttribute("sort");
+        if (sort == null || sort.isEmpty()) {
+            model.put("sortby", new String("Ascending"));
+        } else if (sort.equals("Ascending")) {
+            model.put("sortby", new String("Ascending"));
+        } else if (sort.equals("Descending")) {
+            model.put("sortby", new String("Descending"));
+        } else {
+            model.put("sortby", new String("Ascending"));
+        }
+        System.out.println(sort);
+        if (sort == null || sort.isEmpty()) {
+            JDBCConnection jbdc11 = new JDBCConnection();
+            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+            model.put("answer3", infos11);
+        } else if (sort.equals("Ascending")) {
+            JDBCConnection jbdc11 = new JDBCConnection();
+            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+            model.put("answer3", infos11);
+        } else if (sort.equals("Descending")) {
+            JDBCConnection jbdc11 = new JDBCConnection();
+            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingDESC(startYear, endYear, country);
+            model.put("answer3", infos11);
+        } else {
+            JDBCConnection jbdc11 = new JDBCConnection();
+            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+            model.put("answer3", infos11);
+        }
+
         context.render(TEMPLATE, model);
 
     }

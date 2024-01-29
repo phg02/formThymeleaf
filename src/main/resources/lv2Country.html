@@ -95,22 +95,19 @@
             </div>
             <div class="box box__3">
                 <h1>Ranking</h1>
-                <form action="/country.html" method="post">
+                <form action="/filter" method="post">
                 <div class="selectContainer">
-                    <select class="sortby">
-                        <option value="">Ascending</option>
-                        <option value="">Descending</option>
+                    <select class="sortby" name="sortBy" id="sortBy" onchange="this.form.submit()">
+                        <option selected disabled th:text="${sortby}"></option>
+                        <option th:value="Ascending">Ascending</option>
+                        <option th:value="Descending">Descending</option>
                     </select>
-                    <select class="TypeMeasure">
-                        <option value="">Average</option>
-                        <option value="">Min</option>
-                        <option value="">Min</option>
+                    <select class="TypeMeasure" name="variable" id="variable" onchange="this.form.submit()">
+                        <option th:value="average">AVG Temp</option>
+                        <option th:value="min">Min Temp</option>
+                        <option th:value="max">Max Temp</option>
+                        <option th:value="population">Population</option>
                     </select>
-                    <select class="TypeClass">
-                        <option value="">City</option>
-                        <option value="">State</option>
-                    </select>
-                    <button type="submit" class="sortbutt"><i class="fa-solid fa-arrow-right"></i></i></button>
                 </div>
                 <form>
                 <div class="ranking">
