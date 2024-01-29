@@ -115,14 +115,7 @@
                 <form>
                 <div class="ranking">
                     <ol>
-                        <li>Country 1</li>
-                        <li>Country 2</li>
-                        <li>Country 3</li>
-                        <li>Country 4</li>
-                        <li>Country 5</li>
-                        <li>Country 6</li>
-                        <li>Country 7</li>
-                        <li>Country 8</li>
+                        <li th:each="hehe :${answer3}"><span th:text="${hehe.year}"></span>   <span>Average: <span th:text="${hehe.AVGtemp}"></span>&#176;C</li>
                     </ol>
                 </div>
             </div>

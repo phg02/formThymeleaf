@@ -119,6 +119,10 @@ public class PageST2B implements Handler {
             model.put("percentMaxTemp", percentMaxTempChange);
         }
 
+        JDBCConnection jbdc10 = new JDBCConnection();
+        ArrayList<info> infos10 = jbdc10.lvl2AVGTempRankingASC(startYear, endYear, country);
+        model.put("answer3", infos10);
+
         context.render(TEMPLATE, model);
 
     }

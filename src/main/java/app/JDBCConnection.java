@@ -1100,8 +1100,8 @@ public class JDBCConnection {
         }
         return percentage;
     }
-    
-    public ArrayList<info> lvl2AVGTempRankingTable(String one, String two, String three) {
+
+    public ArrayList<info> lvl2AVGTempRankingASC(String one, String two, String three) {
         ArrayList<info> AVGTempRanking = new ArrayList<info>();
         Connection connection = null;
         try {
@@ -1110,7 +1110,8 @@ public class JDBCConnection {
             statement.setQueryTimeout(30);
 
             String query = "SELECT CT.year,  c.country_name, AVG_temp FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code WHERE CT.year >= "
-                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three + "%' ORDER BY AVG_temp ASC";
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY AVG_temp ASC";
 
             System.out.println(query);
             ResultSet results = statement.executeQuery(query);
