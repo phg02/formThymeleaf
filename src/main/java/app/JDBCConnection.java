@@ -1316,5 +1316,77 @@ public class JDBCConnection {
         return MaxTempRanking;
 
     }
+
+    public ArrayList<info> lvl2PopulationRankingASC(String one, String two, String three) {
+        ArrayList<info> PopulationRanking = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT CT.year,  c.country_name, CASE WHEN CT.year >= 1960 THEN P.POP_NUM ELSE NULL END AS pop_num FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code LEFT JOIN Population P ON CT.country_code = P.country_code AND CT.year = P.year  WHERE CT.year >= "
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY pop_num ASC";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.population = results.getLong("pop_num");
+                PopulationRanking.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return PopulationRanking;
+
+    }
+
+    public ArrayList<info> lvl2PopulationRankingDESC(String one, String two, String three) {
+        ArrayList<info> PopulationRanking = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT CT.year,  c.country_name, CASE WHEN CT.year >= 1960 THEN P.POP_NUM ELSE NULL END AS pop_num FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code LEFT JOIN Population P ON CT.country_code = P.country_code AND CT.year = P.year  WHERE CT.year >= "
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY pop_num DESC";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.population = results.getLong("pop_num");
+                PopulationRanking.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return PopulationRanking;
+  
+    }
 }
 // TODO: Add your required methods here
