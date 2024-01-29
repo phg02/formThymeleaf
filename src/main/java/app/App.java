@@ -68,6 +68,10 @@ public class App {
             ctx.sessionAttribute("endyear1", ctx.formParam("endYear"));
             ctx.redirect("/country.html");
         });
+        app.post("/filter", ctx -> {
+            ctx.sessionAttribute("sort", ctx.formParam("sortBy"));
+            ctx.redirect("/country.html");
+        });
 
         app.post(statecity.URL, new statecity());
         // app.post(PageST3A.URL, new PageST3A());
