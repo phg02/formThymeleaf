@@ -1173,5 +1173,148 @@ public class JDBCConnection {
 
     }
 
+    public ArrayList<info> lvl2MinTempRankingASC(String one, String two, String three) {
+        ArrayList<info> MinTempRanking = new ArrayList<info>();  
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT CT.year,  c.country_name, MIN_temp FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code WHERE CT.year >= "
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY MIN_temp ASC";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.AVGtemp = results.getDouble("AVG_temp");
+                MinTempRanking.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return MinTempRanking;
+
+    }
+
+    public ArrayList<info> lvl2MinTempRankingDESC(String one, String two, String three) {
+        ArrayList<info> MinTempRanking = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT CT.year,  c.country_name, MIN_temp FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code WHERE CT.year >= "
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY MIN_temp DESC";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.AVGtemp = results.getDouble("AVG_temp");
+                MinTempRanking.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return MinTempRanking;
+
+    }
+
+    public ArrayList<info> lvl2MaxTempRankingASC(String one, String two, String three) {
+        ArrayList<info> MaxTempRanking = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT CT.year,  c.country_name, MAX_temp FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code WHERE CT.year >= "
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY MAX_temp ASC";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.AVGtemp = results.getDouble("AVG_temp");
+                MaxTempRanking.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return MaxTempRanking;
+
+    }
+
+    public ArrayList<info> lvl2MaxTempRankingDESC(String one, String two, String three) {
+        ArrayList<info> MaxTempRanking = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT CT.year,  c.country_name, MAX_temp FROM CountryTemperature CT JOIN Country C ON CT.country_code = C.country_code WHERE CT.year >= "
+                    + one + " AND CT.year <= " + two + " AND c.country_name like '%" + three
+                    + "%' ORDER BY MAX_temp DESC";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.AVGtemp = results.getDouble("AVG_temp");
+                MaxTempRanking.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return MaxTempRanking;
+
+    }
 }
 // TODO: Add your required methods here
