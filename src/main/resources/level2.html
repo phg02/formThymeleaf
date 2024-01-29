@@ -43,29 +43,24 @@
                     <h1 th:text="${title}"></h1>
                     <br>
                 </div>
-                <div class="custommenu">
               
-                    <div class="startyear">
-                        <form action="/startYear" method="post" onchange="this.form.submit()">
+                    <form class="custommenu" action="/selectyear" method="post">
+                        <div class="startyear">
                             <select class="clect" id="startyear" name="startyear" required>
                                 <option disabled selected>Start year</option> 
-                                <option th:each="year:${yearselection}" th:text="${year}"></option>
+                                <option th:each="year:${yearselection}" th:text="${year}" th:value="${year}"></option>
                             </select>
-                        </form>
-                    </div>
-                    <div class="endyear">
-                        <form action="/endYear" method="post" onchange="this.form.submit()">
+                        </div>
+                        <div class="endyear">
                             <select class="clect" id="endyear" name="endyear" required>
                                 <option disabled selected>End year</option>
-                                <option th:each="year:${yearselection}" th:text="${year}"></option>
+                                <option th:each="year:${yearselection}" th:text="${year}" th:value="${year}"></option>
                             </select>
-                        </form>
-                    </div>
-                    <div class="thesub">
-                        <button type="submit" class="subform"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div> 
-                </form>
-                </div>
+                        </div>
+                        <div class="thesub">
+                            <button type="submit" class="subform"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div> 
+                    </form>
                 <br>
                 <div class="squidborder">
                     <table>
@@ -95,12 +90,12 @@
             </div>
             <div class="box box__3">
                 <h1>Ranking average temp</h1>
-                <form>
-                    <select class="sortby">
-                        <option value="">Ascending</option>
-                        <option value="">Descending</option>
+                <form method="post" action="sort">
+                    <select class="sortby" name="sortby" onchange="this.form.submit()">
+                        <option disabled selected th:text="${sortby}"></option>
+                        <option th:value="Ascending">Ascending</option>
+                        <option th:value="Descending">Descending</option>
                     </select>
-                    <button type="submit" class="sortbutt"><i class="fa-solid fa-arrow-right"></i></i></button>
                 </form>
                 <div class="ranking">
                     <ol>

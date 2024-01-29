@@ -531,6 +531,39 @@ public class JDBCConnection {
         return rankinglist;
     }
 
+    public ArrayList<info> rankingYearDesc(String startyear, String endyear) {
+        ArrayList<info> rankinglist = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT c.country_name, AVG_temp, year FROM WorldTemperature wt JOIN Country c ON c.country_code = wt.country_code WHERE year >= "
+                    + startyear + " AND year <= " + endyear + " ORDER BY AVG_temp DESC;";
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.year = results.getInt("year");
+                info.AVGtemp = results.getDouble("AVG_temp");
+                rankinglist.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return rankinglist;
+    }
+
     public long getPopNum(String year) {
         Connection connection = null;
         long pop = 0;
