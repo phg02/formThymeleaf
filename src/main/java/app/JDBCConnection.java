@@ -1100,6 +1100,7 @@ public class JDBCConnection {
         }
         return percentage;
     }
+    
     public ArrayList<info> lvl2AVGTempRankingTable(String one, String two, String three) {
         ArrayList<info> AVGTempRanking = new ArrayList<info>();
         Connection connection = null;
