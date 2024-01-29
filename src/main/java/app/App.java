@@ -70,6 +70,7 @@ public class App {
         });
         app.post("/filter", ctx -> {
             ctx.sessionAttribute("sort", ctx.formParam("sortBy"));
+            ctx.sessionAttribute("variable", ctx.formParam("variable"));
             ctx.redirect("/country.html");
         });
 

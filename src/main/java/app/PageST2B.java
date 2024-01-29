@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import java.util.Map;
+
+import javax.sound.midi.SysexMessage;
+
 import java.util.HashMap;
 
 import java.sql.Connection;
@@ -150,6 +153,65 @@ public class PageST2B implements Handler {
             JDBCConnection jbdc11 = new JDBCConnection();
             ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
             model.put("answer3", infos11);
+        }
+        String var = context.sessionAttribute("variable");
+        System.out.println(var);
+        if (var == null || var.isEmpty()) {
+            if (sort == null || sort.isEmpty()) {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else if (sort.equals("Ascending")) {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else if (sort.equals("Descending")) {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingDESC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            }
+
+        } else if (var.equals("min")) {
+            if (sort == null || sort.isEmpty()) {
+                JDBCConnection jbdc12 = new JDBCConnection();
+                ArrayList<info> infos12 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos12);
+            } else if (sort.equals("Ascending")) {
+                JDBCConnection jbdc12 = new JDBCConnection();
+                ArrayList<info> infos12 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos12);
+            } else if (sort.equals("Descending")) {
+                JDBCConnection jbdc12 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc12.lvl2MinTempRankingDESC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else {
+                JDBCConnection jbdc12 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            }
+
+        } else if (var.equals("average")) {
+            if (sort == null || sort.isEmpty()) {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else if (sort.equals("Ascending")) {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else if (sort.equals("Descending")) {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingDESC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            } else {
+                JDBCConnection jbdc11 = new JDBCConnection();
+                ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
+                model.put("answer3", infos11);
+            }
         }
 
         context.render(TEMPLATE, model);
