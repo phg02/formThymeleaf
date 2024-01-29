@@ -74,7 +74,18 @@ public class App {
             ctx.redirect("/country.html");
         });
 
-        app.post(statecity.URL, new statecity());
+        app.post("/getCountry", ctx -> {
+            ctx.sessionAttribute("country", ctx.formParam("country"));
+            ctx.redirect("/statecity.html");
+        });
+        app.post("/getInfo", ctx -> {
+            ctx.sessionAttribute("state", ctx.formParam("state"));
+            ctx.sessionAttribute("city", ctx.formParam("city"));
+            ctx.sessionAttribute("startyear", ctx.formParam("startyear"));
+            ctx.sessionAttribute("endyear", ctx.formParam("endyear"));
+            ctx.redirect("/statecity.html");
+        });
+
         // app.post(PageST3A.URL, new PageST3A());
         // app.post(PageST3B.URL, new PageST3B());
     }

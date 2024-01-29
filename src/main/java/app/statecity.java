@@ -46,11 +46,15 @@ public class statecity implements Handler {
         }
         model.put("countryselection", countryselection);
 
-        String country = context.formParam("country");
-        String state = context.formParam("state");
-        String city = context.formParam("city");
-        String startYear = context.formParam("startYear");
-        String endYear = context.formParam("endYear");
+        String country = context.sessionAttribute("country");
+        JDBCConnection jdbc99 = new JDBCConnection();
+        ArrayList<info> stateselection = new ArrayList<info>();
+        stateselection = jdbc99.getallState(country);
+        model.put("stateselection", stateselection);
+        String state = context.sessionAttribute("state");
+        String city = context.sessionAttribute("city");
+        String startYear = context.sessionAttribute("startYear");
+        String endYear = context.sessionAttribute("endYear");
 
         System.out.println(country + " " + state + " " + city + " " + startYear + " " + endYear);
         System.out.println(state);

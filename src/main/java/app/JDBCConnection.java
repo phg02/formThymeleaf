@@ -1174,7 +1174,7 @@ public class JDBCConnection {
     }
 
     public ArrayList<info> lvl2MinTempRankingASC(String one, String two, String three) {
-        ArrayList<info> MinTempRanking = new ArrayList<info>();  
+        ArrayList<info> MinTempRanking = new ArrayList<info>();
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(DATABASE);
@@ -1386,7 +1386,43 @@ public class JDBCConnection {
             }
         }
         return PopulationRanking;
-  
+
     }
+
+    public ArrayList<info> getallState(String one) {
+
+        ArrayList<info> state = new ArrayList<info>();
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DATABASE);
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+
+            String query = "SELECT DISTINCT st.state_name FROM StateTemperature st JOIN Country c ON st.country_code = c.country_code \n"
+                    + //
+                    "WHERE c.country_name = '" + one + "'";
+
+            System.out.println(query);
+            ResultSet results = statement.executeQuery(query);
+            while (results.next()) {
+                info info = new info();
+                info.stateName = results.getString("state_name");
+                state.add(info);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+        return state;
+    }
+
 }
 // TODO: Add your required methods here

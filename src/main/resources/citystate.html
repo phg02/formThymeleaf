@@ -45,36 +45,43 @@
                 </div>
                 <form action="/citystate.html" method ="post">
                     <div class="country">
-                        <select name="country" id="country">
-                            <option disabled selected>Country</option> 
-                            <option th:each="country:${countryselection}" th:text="${country}"></option>
-                        </select>
+                        <form action="getCountry" method="post">
+                            <select name="country" id="country" onchange="this.form.submit()">
+                                <option disabled selected>Country</option> 
+                                <option th:each="country:${countryselection}" th:text="${country}"></option>
+                            </select>
+                        </form>
                     </div>
                     <div class="custommenu">
-                        <div class="state">
-                            <input id="state" name="state" placeholder="Enter a state">
-                        </div>
-                        <div><h3> or</h3></div>
-                        <div class="city">
-                        <input id="city" name ="city" placeholder="Enter a city"> 
-                        </div>
-                        <div class="startyear">
-                            <select id="startYear" name="startYear">
-                                <option disabled selected>Start year</option> 
-                                <option th:each="year:${yearselection}" th:text="${year}"></option>
-                            </select>
-                        </div>
-                        <div class="endyear">
-                            <select id="endYear" name="endYear">
-                                <option disabled selected>End year</option>
-                                <option th:each="year:${yearselection}" th:text="${year}"></option>
-                            </select>
-                        </div>
-                        <div class="thesub">
-                            <button type="submit" class="subform"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div> 
+                        <form method="getInfo" action="post">
+                            <div class="state">
+                                <select name="State" id="State">
+                                    <option disabled selected>State</option>
+                                    <option th:each="state : ${stateselection}" th:text="${state}" th:value="${state}"></option>
+                                </select>
+                            </div>
+                            <div><h3> or</h3></div>
+                            <div class="city">
+                            <input id="city" name ="city" placeholder="Enter a city"> 
+                            </div>
+                            <div class="startyear">
+                                <select id="startYear" name="startYear">
+                                    <option disabled selected>Start year</option> 
+                                    <option th:each="year:${yearselection}" th:text="${year}"></option>
+                                </select>
+                            </div>
+                            <div class="endyear">
+                                <select id="endYear" name="endYear">
+                                    <option disabled selected>End year</option>
+                                    <option th:each="year:${yearselection}" th:text="${year}"></option>
+                                </select>
+                            </div>
+                            <div class="thesub">
+                                <button type="submit" class="subform"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </form> 
                     </div>
-                </form>
+                
                 <br>
                 <div class="squidborder">
                     <table>
