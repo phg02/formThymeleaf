@@ -122,10 +122,6 @@ public class PageST2B implements Handler {
             model.put("percentMaxTemp", percentMaxTempChange);
         }
 
-        JDBCConnection jbdc10 = new JDBCConnection();
-        ArrayList<info> infos10 = jbdc10.lvl2AVGTempRankingASC(startYear, endYear, country);
-        model.put("answer3", infos10);
-
         String sort = context.sessionAttribute("sort");
         if (sort == null || sort.isEmpty()) {
             model.put("sortby", new String("Ascending"));
@@ -137,23 +133,7 @@ public class PageST2B implements Handler {
             model.put("sortby", new String("Ascending"));
         }
         System.out.println(sort);
-        if (sort == null || sort.isEmpty()) {
-            JDBCConnection jbdc11 = new JDBCConnection();
-            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
-            model.put("answer3", infos11);
-        } else if (sort.equals("Ascending")) {
-            JDBCConnection jbdc11 = new JDBCConnection();
-            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
-            model.put("answer3", infos11);
-        } else if (sort.equals("Descending")) {
-            JDBCConnection jbdc11 = new JDBCConnection();
-            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingDESC(startYear, endYear, country);
-            model.put("answer3", infos11);
-        } else {
-            JDBCConnection jbdc11 = new JDBCConnection();
-            ArrayList<info> infos11 = jbdc11.lvl2AVGTempRankingASC(startYear, endYear, country);
-            model.put("answer3", infos11);
-        }
+
         String var = context.sessionAttribute("variable");
         if (var == null || var.isEmpty()) {
             model.put("variable", new String("Ranking Average Temp"));
@@ -201,11 +181,11 @@ public class PageST2B implements Handler {
                 ArrayList<info> infos12 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);
                 model.put("answer3", infos12);
                 System.out.println("hello");
-            } else if (sort.equals("Ascending")) {
+            } else if (sort.equals("Ascending") && var.equals("min")) {
                 JDBCConnection jbdc12 = new JDBCConnection();
                 ArrayList<info> infos12 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);
                 model.put("answer3", infos12);
-            } else if (sort.equals("Descending")) {
+            } else if (sort.equals("Descending") && var.equals("min")) {
                 JDBCConnection jbdc12 = new JDBCConnection();
                 ArrayList<info> infos11 = jbdc12.lvl2MinTempRankingDESC(startYear, endYear, country);
                 model.put("answer3", infos11);
