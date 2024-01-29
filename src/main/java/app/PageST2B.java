@@ -52,9 +52,11 @@ public class PageST2B implements Handler {
         model.put("countryselection", countryselection);
 
         // read value from form
-        String startYear = context.formParam("startYear");
-        String endYear = context.formParam("endYear");
-        String country = context.formParam("country");
+        String country = context.sessionAttribute("country");
+        String startYear = context.sessionAttribute("startyear1");
+        String endYear = context.sessionAttribute("endyear1");
+        System.out.println(country);
+        System.out.println(startYear);
 
         // return country name
         if (country == null) {

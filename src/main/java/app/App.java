@@ -62,7 +62,13 @@ public class App {
             ctx.sessionAttribute("sort", ctx.formParam("sortby"));
             ctx.redirect("/world.html");
         });
-        app.post(PageST2B.URL, new PageST2B());
+        app.post("/selectStuff", ctx -> {
+            ctx.sessionAttribute("country", ctx.formParam("country"));
+            ctx.sessionAttribute("startyear1", ctx.formParam("startYear"));
+            ctx.sessionAttribute("endyear1", ctx.formParam("endYear"));
+            ctx.redirect("/country.html");
+        });
+
         app.post(statecity.URL, new statecity());
         // app.post(PageST3A.URL, new PageST3A());
         // app.post(PageST3B.URL, new PageST3B());

@@ -43,23 +43,23 @@
                     <h1><span th:text="${country}"></span></h1>
                     <br>
                 </div>
-                <form class="custommenu" action='/country.html' method='post'>
+                <form class="custommenu" action='/selectStuff' method='post'>
                     <div class="country">
                         <select id="country" name="country">
                             <option disabled selected>Country</option> 
-                            <option th:each="country : ${countryselection}" th:text="${country}"></option>
+                            <option th:each="country : ${countryselection}" th:text="${country}" th:value="${country}"></option>
                         </select>
                     </div>
                     <div class="startYear">
                         <select id="startYear" name="startYear">
                             <option disabled selected>Start year</option> 
-                            <option th:each="year:${yearselection}" th:text="${year}"></option>
+                            <option th:each="year:${yearselection}" th:text="${year}" th:value="${year}"></option>
                         </select>
                     </div>
                     <div class="endyear">
                         <select  id="endYear" name="endYear">
                             <option disabled selected>End year</option>
-                            <option th:each="year:${yearselection}" th:text="${year}"></option>
+                            <option th:each="year:${yearselection}" th:text="${year}" th:value="${year}"></option>
                         </select>
                     </div>
                     <br>
