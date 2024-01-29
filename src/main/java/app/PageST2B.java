@@ -155,6 +155,26 @@ public class PageST2B implements Handler {
             model.put("answer3", infos11);
         }
         String var = context.sessionAttribute("variable");
+        if (var == null || var.isEmpty()) {
+            model.put("variable", new String("Ranking Average Temp"));
+            model.put("var", "average");
+        } else if (var.equals("min")) {
+            model.put("variable", new String("Ranking Minimum Temp"));
+            model.put("var", var);
+        } else if (var.equals("average")) {
+            model.put("variable", new String("Ranking Average Temp"));
+            model.put("var", var);
+        } else if (var.equals("max")) {
+            model.put("variable", new String("Ranking Maximum Temp"));
+            model.put("var", var);
+        } else if (var.equals("population")) {
+            model.put("variable", new String("Ranking Population"));
+            model.put("var", var);
+        } else {
+            model.put("variable", new String("Ranking"));
+            model.put("var", new String("Variable"));
+        }
+
         System.out.println(var);
         if (var == null || var.isEmpty()) {
             if (sort == null || sort.isEmpty()) {
@@ -180,6 +200,7 @@ public class PageST2B implements Handler {
                 JDBCConnection jbdc12 = new JDBCConnection();
                 ArrayList<info> infos12 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);
                 model.put("answer3", infos12);
+                System.out.println("hello");
             } else if (sort.equals("Ascending")) {
                 JDBCConnection jbdc12 = new JDBCConnection();
                 ArrayList<info> infos12 = jbdc12.lvl2MinTempRankingASC(startYear, endYear, country);

@@ -94,7 +94,7 @@
                 <a href="citystate.html"><button class="option">State/City View</button></a>
             </div>
             <div class="box box__3">
-                <h1>Ranking</h1>
+                <h1 th:text="${variable}"></h1>
                 <form action="/filter" method="post">
                 <div class="selectContainer">
                     <select class="sortby" name="sortBy" id="sortBy" onchange="this.form.submit()">
@@ -103,6 +103,7 @@
                         <option th:value="Descending">Descending</option>
                     </select>
                     <select class="TypeMeasure" name="variable" id="variable" onchange="this.form.submit()">
+                        <option selected disabled th:text="${var}"></option>
                         <option th:value="average">AVG Temp</option>
                         <option th:value="min">Min Temp</option>
                         <option th:value="max">Max Temp</option>
@@ -112,8 +113,8 @@
                 <form>
                 <div class="ranking">
                     <ol>
-                        <li th:each="hehe :${answer3}"><span th:text="${hehe.year}"></span>   <span>Average: <span th:text="${hehe.AVGtemp}"></span>&#176;C</li>
-                    </ol>
+                        <li th:each="hehe :${answer3}"><span th:text="${hehe.year}"></span></li>
+                       
                 </div>
             </div>
             <div class="box box__5">
