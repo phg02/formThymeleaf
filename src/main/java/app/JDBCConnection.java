@@ -1190,7 +1190,7 @@ public class JDBCConnection {
             while (results.next()) {
                 info info = new info();
                 info.year = results.getInt("year");
-                info.AVGtemp = results.getDouble("AVG_temp");
+                info.Mintemp = results.getDouble("MIN_temp");
                 MinTempRanking.add(info);
             }
             statement.close();
@@ -1226,7 +1226,7 @@ public class JDBCConnection {
             while (results.next()) {
                 info info = new info();
                 info.year = results.getInt("year");
-                info.AVGtemp = results.getDouble("AVG_temp");
+                info.Mintemp = results.getDouble("MIN_temp");
                 MinTempRanking.add(info);
             }
             statement.close();
@@ -1262,7 +1262,7 @@ public class JDBCConnection {
             while (results.next()) {
                 info info = new info();
                 info.year = results.getInt("year");
-                info.AVGtemp = results.getDouble("AVG_temp");
+                info.Maxtemp = results.getDouble("MAX_temp");
                 MaxTempRanking.add(info);
             }
             statement.close();
@@ -1298,7 +1298,7 @@ public class JDBCConnection {
             while (results.next()) {
                 info info = new info();
                 info.year = results.getInt("year");
-                info.AVGtemp = results.getDouble("AVG_temp");
+                info.Maxtemp = results.getDouble("MAX_temp");
                 MaxTempRanking.add(info);
             }
             statement.close();
